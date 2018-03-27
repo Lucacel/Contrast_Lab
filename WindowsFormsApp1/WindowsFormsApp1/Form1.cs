@@ -15,9 +15,10 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        private Bitmap loadedBitmap;
-        private Bitmap toEditBitmap;
+        public static Bitmap loadedBitmap;
+        public static Bitmap toEditBitmap;
         private static int THRESHOLD_VALUE_CONTRAST = 0;
+        public static double GAMMA_VALUE = 1;
         public Form1()
         {
             InitializeComponent();
@@ -85,6 +86,25 @@ namespace WindowsFormsApp1
             return resultBitmap;
         }
 
+        public static Bitmap GammaCorrection(Bitmap sourceBitmap, double gamma)
+        {
+            Bitmap resultBitmap = sourceBitmap;
+            double gammaCorrection = 1 / gamma;
+            for (int i = 0; i < resultBitmap.Width; i++)
+            {
+                for (int j = 0; j < resultBitmap.Height; j++)
+                {
+                    Color pixelColor = resultBitmap.GetPixel(i, j);
+                    double newRed = Math.Pow(255.0 * ((double)pixelColor.R / 255.0), gammaCorrection);
+                    double newGreen = Math.Pow(255.0 * ((double)pixelColor.G / 255.0), gammaCorrection);
+                    double newBlue = Math.Pow(255.0 * ((double)pixelColor.B / 255.0), gammaCorrection);
+                    Color newPixel = Color.FromArgb((int) newRed, (int) newGreen, (int) newBlue);
+                    resultBitmap.SetPixel(i,j,newPixel);
+                }
+            }
+            
+            return resultBitmap;
+        }
 
         public void showLoadedImage(String fileToDisplay)
         {
@@ -179,5 +199,15 @@ namespace WindowsFormsApp1
         {
             Application.Exit();
         }
+
+        private void gammaCorectionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var gammaInputForm = new Form2(this);
+            gammaInputForm.Show();
+
+        }
+        
+        
+
     }
 }
