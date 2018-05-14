@@ -37,12 +37,14 @@
             this.contrastToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.higherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lowerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gammaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gammaCorectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.gammaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gammaCorectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.filteringToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.medianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -94,7 +96,8 @@
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.contrastToolStripMenuItem,
-            this.gammaToolStripMenuItem});
+            this.gammaToolStripMenuItem,
+            this.filteringToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
@@ -121,6 +124,21 @@
             this.lowerToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.lowerToolStripMenuItem.Text = "Lower";
             this.lowerToolStripMenuItem.Click += new System.EventHandler(this.lowerToolStripMenuItem_Click);
+            // 
+            // gammaToolStripMenuItem
+            // 
+            this.gammaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gammaCorectionToolStripMenuItem});
+            this.gammaToolStripMenuItem.Name = "gammaToolStripMenuItem";
+            this.gammaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.gammaToolStripMenuItem.Text = "Gamma";
+            // 
+            // gammaCorectionToolStripMenuItem
+            // 
+            this.gammaCorectionToolStripMenuItem.Name = "gammaCorectionToolStripMenuItem";
+            this.gammaCorectionToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.gammaCorectionToolStripMenuItem.Text = "Gamma Correction";
+            this.gammaCorectionToolStripMenuItem.Click += new System.EventHandler(this.gammaCorectionToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
@@ -156,20 +174,20 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Edited image";
             // 
-            // gammaToolStripMenuItem
+            // filteringToolStripMenuItem
             // 
-            this.gammaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gammaCorectionToolStripMenuItem});
-            this.gammaToolStripMenuItem.Name = "gammaToolStripMenuItem";
-            this.gammaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.gammaToolStripMenuItem.Text = "Gamma";
+            this.filteringToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.medianToolStripMenuItem});
+            this.filteringToolStripMenuItem.Name = "filteringToolStripMenuItem";
+            this.filteringToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.filteringToolStripMenuItem.Text = "Filtering";
             // 
-            // gammaCorectionToolStripMenuItem
+            // medianToolStripMenuItem
             // 
-            this.gammaCorectionToolStripMenuItem.Name = "gammaCorectionToolStripMenuItem";
-            this.gammaCorectionToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
-            this.gammaCorectionToolStripMenuItem.Text = "Gamma Correction";
-            this.gammaCorectionToolStripMenuItem.Click += new System.EventHandler(this.gammaCorectionToolStripMenuItem_Click);
+            this.medianToolStripMenuItem.Name = "medianToolStripMenuItem";
+            this.medianToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.medianToolStripMenuItem.Text = "Median";
+            this.medianToolStripMenuItem.Click += new System.EventHandler(this.medianToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -210,6 +228,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripMenuItem gammaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gammaCorectionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem filteringToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem medianToolStripMenuItem;
     }
 }
 
